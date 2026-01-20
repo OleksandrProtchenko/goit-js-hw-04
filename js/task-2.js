@@ -10,9 +10,24 @@ function calcAverageCalories(days) {
   //   return days.length === 0
   //     ? 0
   //     : days.reduce((acc, day) => acc + day.calories, 0) / days.length;
+
   /* Варіант 3 */
-  const result = days.reduce((acc, day) => acc + day.calories, 0) / days.length;
-  return result || 0;
+  // const result = days.reduce((acc, day) => acc + day.calories, 0) / days.length;
+  // return result || 0;
+
+  /* Варіант 4 */
+  let total = 0;
+
+  if (days.length === 0) {
+    return 0;
+  }
+  for (const day of days) {
+    if (typeof day.calories === "number") {
+      total += day.calories;
+    }
+  }
+  const caloriesPerDay = total / days.length;
+  return caloriesPerDay;
 }
 
 console.log("----- Task 2 -----");

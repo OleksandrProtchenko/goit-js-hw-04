@@ -14,7 +14,8 @@ function isEnoughCapacity(products, containerSize) {
 
   /* Варіант 3 */
   total = Object.values(products).reduce((acc, value) => acc + value, 0);
-  return total <= containerSize ? true : false;
+  // return total <= containerSize ? true : false;
+  return total <= containerSize;
 }
 
 console.log("----- Task 1 -----");
